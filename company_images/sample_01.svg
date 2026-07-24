@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400">
+  <rect width="400" height="400" fill="#f5f5f5" rx="8"/>
+  <ellipse cx="200" cy="220" rx="90" ry="110" fill="#e74c3c" opacity="0.85"/>
+  <rect x="170" y="100" width="60" height="60" rx="8" fill="#c0392b"/>
+  <rect x="175" y="80" width="50" height="30" rx="5" fill="#a93226"/>
+  <text x="200" y="380" text-anchor="middle" fill="#999" font-family="sans-serif" font-size="12">sample_01 — 替换为实际版权图片</text>
+</svg>

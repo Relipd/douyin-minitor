@@ -27,12 +27,16 @@ logs/
 evidence/
 temp/
 review/
-fingerprints/
+fingerprints/*
+!fingerprints/README.md
 *.pkl
 
 # Company images (sensitive - add your own images locally)
-company_images/
-crop_images/
+# Sample placeholder SVGs are whitelisted for demo purposes
+company_images/*
+!company_images/*.svg
+crop_images/*
+!crop_images/*.svg
 
 # External tools (ffmpeg binaries)
 tools/
