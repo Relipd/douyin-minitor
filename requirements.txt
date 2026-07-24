@@ -1,0 +1,11 @@
+playwright
+pyyaml
+opencv-python
+imagehash
+Pillow
+numpy
+httpx
+scikit-image
+open-clip-torch
+torch
+torchvision

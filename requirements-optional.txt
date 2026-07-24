@@ -1,0 +1,16 @@
+# 可选依赖 — 按需安装
+
+# 视频下载备份方案
+yt-dlp
+
+# YOLO 目标检测（enhanced_detector.py）
+ultralytics
+
+# CLIP 语义匹配（enhanced_detector.py）
+open-clip-torch
+torch
+torchvision
+
+# OCR 文字检测（suspect_detector.py）
+paddlepaddle
+paddleocr

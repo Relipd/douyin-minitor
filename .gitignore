@@ -1,0 +1,55 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Virtual environments
+.venv/
+.venv-1/
+venv/
+env/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Playwright browser data (contains login cookies)
+browser_data/
+
+# Application runtime data
+logs/
+evidence/
+temp/
+review/
+fingerprints/
+*.pkl
+
+# Company images (sensitive - add your own images locally)
+company_images/
+crop_images/
+
+# External tools (ffmpeg binaries)
+tools/
+
+# Config with real secrets
+config.yaml
+
+# Environment secrets
+.env
+.env.local
+
+# OS
+Thumbs.db
+.DS_Store
+Desktop.ini
+
+# Internal docs
+PROJECT_REVIEW.md
+PROJECT_SUMMARY.md
+TECHNICAL_BRIEF.md

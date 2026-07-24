@@ -1,0 +1,59 @@
+# ═══════════════════════════════════════════════════
+# 抖音版权监控 — 配置文件模板
+# 复制为 config.yaml 并填入实际值
+# ═══════════════════════════════════════════════════
+
+# ── 抓帧 ──
+capture:
+  num_frames: 200              # 每视频最大帧数上限
+  interval_seconds: 0.5        # 帧间间隔（秒）
+  random_start: true           # 是否随机起始时间点
+
+# ── Layer 1: 垃圾帧过滤 ──
+frame_filter:
+  black_threshold: 15.0        # 亮度低于此值=黑屏
+  white_threshold: 240.0       # 亮度高于此值=白屏
+  entropy_min: 3.0             # 信息熵低于此值=无内容
+  laplacian_min: 50.0          # 清晰度低于此值=模糊
+
+# ── Layer 2: SSIM 去重 ──
+dedup:
+  ssim_threshold: 0.92         # SSIM 高于此值=重复帧
+
+# ── Layer 3: CLIP 语义召回 ──
+clip:
+  model: "ViT-B-32"
+  pretrained: "laion2b_s34b_b79k"
+  threshold: 0.25              # 相似度低于此值不返回
+  top_n: 5                     # 返回前 N 个候选
+  cache_dir: "./fingerprints"
+
+# ── Layer 3: ORB 特征验证 ──
+orb:
+  n_features: 2000             # ORB 最大特征点数
+  min_good_matches: 6          # 最少匹配点数
+  ratio_thresh: 0.75           # Lowe's ratio test 阈值
+  max_side: 800                # 图片缩放最大边长
+
+# ── 图库路径 ──
+company_images_path: "./company_images"
+crop_images_path: "./crop_images"
+
+# ── AI 二次细筛（可选）──
+# 如需启用，填入 OpenAI 兼容 API 的配置：
+#   api_key: "${YOUR_API_KEY_ENV_VAR}"  或直接填写
+#   base_url: "https://api.openai.com/v1"
+#   model: "gpt-4o"
+ai_screening:
+  enabled: false
+  api_key: "${AI_API_KEY}"
+  base_url: "https://api.openai.com/v1"
+  model: "gpt-4o"
+  min_confidence: 0.3
+  batch_size: 5
+
+# ── 输出目录 ──
+output:
+  review_dir: "./review"       # 疑似证据保存目录
+  temp_dir: "./temp"           # 临时帧目录
+  logs_dir: "./logs"
